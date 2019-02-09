@@ -19,9 +19,10 @@ public class ScorePanel : MonoBehaviour
 		
 	}
 
-    // スコアの表示更新
+    // スコアの表示
     public void ShowScore(int score)
     {
+        // 渡されたポイントを表示します
         scoreLabel.text = "Score:" + score;
     }
 }

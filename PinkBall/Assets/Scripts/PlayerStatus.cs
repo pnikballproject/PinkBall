@@ -13,9 +13,6 @@ public class PlayerStatus : MonoBehaviour
     public int selectedCharacter; // 選択したキャラクターID
     public int hitCounter; // キャラクターへのヒット数
 
-    ScorePanel scorePanel;
-    LifePanel lifePanel;
-
     // Use this for initialization
     void Start()
     {
@@ -32,23 +29,22 @@ public class PlayerStatus : MonoBehaviour
     }
 
     // スコアの追加を行う
-    public void UpdateScore(int ScorePoint)
+    public int UpdateScore(int ScorePoint)
     {
         score += ScorePoint; // スコアの追加
-        scorePanel.ShowScore(score); // スコア表示を更新
+        return score;
     }
 
     // ボール（残機）の増減を行う
-    public void LifePointUpDate(int managementBall)
+    public int LifePointUpDate(int managementBall)
     {
         // 残機数を増やす場合
         if (managementBall > 0)
         {
-            // 上限より増やさない
+            // 残機数の上限を設ける
             if (ball < DefaultBallPoint)
             {
                 ball += managementBall; // 残機増加
-                lifePanel.UpdateBallPoint(ball); // 表示の更新
             }
         }
         // 残機数を減らす場合
@@ -57,12 +53,12 @@ public class PlayerStatus : MonoBehaviour
             if (ball > 0)
             {
                 ball += managementBall; // 残機減少
-                lifePanel.UpdateBallPoint(ball); // 表示の更新
             }
             else
             {
                 // ゲームオーバー
             }
         }
+        return ball;
     }
 }

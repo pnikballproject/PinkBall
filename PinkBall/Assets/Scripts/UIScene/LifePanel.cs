@@ -26,6 +26,7 @@ public class LifePanel : MonoBehaviour
 		
 	}
 
+    // 残機の表示を行います。
     public void UpdateBallPoint(int life)
     {
         for(int i = 0; i < ballIcons.Length; i++)
