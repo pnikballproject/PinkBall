@@ -10,6 +10,15 @@ public class GimicBase : MonoBehaviour{
     //このオブジェクトに当たった時の得点
     public int gainScore;
 
+    //このオブジェクトに当たった時の効果音 必要分入れてください
+    //配列の0番目は当たった時に自動で鳴る音を設定してください（その他駆動のイベント的音源は1番以降に）
+    public AudioClip[] clip;
+
+    //オーディオソース
+    //自身にアタッチしたオーディオソースコンポーネントをインスペクター上で設定してください
+    //オーディオソース側のオーディオクリップには何も入れなくていいです（↑で持っているため）
+    public AudioSource hitSound;
+
     //反発力 10000くらい～　じゃないとちゃんと弾かない 玉の設定にもよるので調整してください
     public float resilience;
 
@@ -22,7 +31,7 @@ public class GimicBase : MonoBehaviour{
     //プロパティ類------------------------------------------------
 
     //スコアのプロパティ　使わないかもしれないが一応
-    public int GainScore
+    public virtual int GainScore
     {
         get
         {
@@ -38,7 +47,7 @@ public class GimicBase : MonoBehaviour{
     //------------------------------------------------------------
 
     //玉がこのオブジェクトに当たった時
-    public void OnCollisionEnter(Collision other)
+    public virtual void OnCollisionEnter(Collision col)
     {
         //マネージャーに自身のIDを渡す
         //ギミック制作者は自身のシーンでオブジェクト作成する際に、このメソッドをコメントアウトしてください
@@ -48,22 +57,40 @@ public class GimicBase : MonoBehaviour{
 
         Debug.Log("ギミックオブジェクトID:" + id + " にヒット");
 
-        //方向を算出する処理呼び出し
-        checkDirection(other);
+        //※デバッグ用です　本番ではコメントアウトしてください
+        //ギミック制作シーン（マネージャがない状態）で制作デバッグ用です
+        //基本的な処理をすべて呼び出します
+        hitBasicProcessing(col);
+    }
+
+    //基本的なヒット時の処理1連を自動処理
+    public virtual void hitBasicProcessing(Collision col)
+    {
+        //効果音を鳴らす
+        playHitSoundClip(0); //基本ヒット時音
+
+        //方向を算出して反発させる処理呼び出し
+        checkDirection(col);
+    }
+
+    //基本効果音を鳴らす
+    public virtual void playHitSoundClip(int num)
+    {
+        hitSound.PlayOneShot(clip[num]);
     }
 
     //反発方向を算出
-    public void checkDirection(Collision other)
+    public virtual void checkDirection(Collision col)
     {
-        direction = other.gameObject.transform.position - transform.position;
+        direction = col.gameObject.transform.position - transform.position;
 
-        addForce(other);
+        addForce(col);
     }
 
     //玉を反発させる力を加える
-    public void addForce(Collision other)
+    public virtual void addForce(Collision col)
     {
-        other.gameObject.GetComponent<Rigidbody>().AddForce((direction.normalized) * resilience * Time.deltaTime);
+        col.gameObject.GetComponent<Rigidbody>().AddForce((direction.normalized) * resilience * Time.deltaTime);
     }
 
 }
