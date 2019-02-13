@@ -62,8 +62,6 @@ public class FlipController : MonoBehaviour
         // リターン(Return)キーをクリックした時
         if (Input.GetKeyUp(KeyCode.Return))
         {
-            //Debug.Log("x,y=" + xVector(stageAngle) + "," + yVector(stageAngle));
-
             // ピンボール台の傾きに合わせたベクトルを計算
             Vector3 Pos1 = new Vector3(xVector(stageAngle), yVector(stageAngle), 0f);
 
@@ -139,12 +137,6 @@ public class FlipController : MonoBehaviour
         hjL.spring = sprL;
     }
 
-    /*
-	* 練習のためのメソッド化しています。
-	* 頻繁に使うわけでもないので練習でなければ必要はないかもしれません
-	*/
-    // private メソッドは同じクラス内でのみ呼び出せる
-    // メソッドからの値を取得したい場合は、「型」の宣言と「return」文による返り値の指定が必要です。
     private float yVector(float angle)
     {
         // 角度(angle)に対する、y軸のベクトルを計算します。
