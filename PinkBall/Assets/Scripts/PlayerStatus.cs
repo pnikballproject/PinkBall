@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerStatus : MonoBehaviour
 {
     const int StartCount = 0;
-    public int DefaultBallPoint = 3; // デフォルトの残機数
 
+    private int defaultBallPoint; // 残機の初期化
     private int ball; // 玉の残機数
     private int score; // プレイヤーのスコアを保存する
     private int selectedCharacter; // 選択したキャラクターID
@@ -71,6 +71,19 @@ public class PlayerStatus : MonoBehaviour
         set
         {
             hitCounter = value;
+        }
+    }
+
+    public int DefaultBallPoint
+    {
+        get
+        {
+            return defaultBallPoint;
+        }
+
+        set
+        {
+            defaultBallPoint = value;
         }
     }
 
