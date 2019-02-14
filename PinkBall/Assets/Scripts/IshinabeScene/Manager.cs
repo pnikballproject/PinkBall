@@ -5,6 +5,7 @@ using UnityEngine;
 public class Manager : MonoBehaviour {
     public GameObject[] gimmiks;
     public int eventID = -1;
+    public PlayerStatus playerStatus;
 
     // Use this for initialization
     void Start () {
@@ -16,11 +17,9 @@ public class Manager : MonoBehaviour {
         switch (eventID)
         {
             case 0:
-                /*
-                Hoge hoge = gimmiks[0].GetComponent<Hoge>();
-                hoge.Event();
+                Gimic_Emission emission = gimmiks[0].GetComponent<Gimic_Emission>();
+                emission.Emission();
                 eventID = -1;
-                 */
                 break;
         }
 	}

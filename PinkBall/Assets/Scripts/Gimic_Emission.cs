@@ -15,6 +15,11 @@ public class Gimic_Emission : GimicBase {
         base.OnCollisionEnter(col);
 
         //光らせる処理（コルーチン）呼び出し
+        //StartCoroutine(lightingEmission());
+    }
+
+    public void Emission()
+    {
         StartCoroutine(lightingEmission());
     }
 
