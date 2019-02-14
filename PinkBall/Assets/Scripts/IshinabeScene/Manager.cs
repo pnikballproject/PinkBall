@@ -26,6 +26,21 @@ public class Manager : MonoBehaviour {
                 scorePanel.ShowScore(point);
                 eventID = -1;
                 break;
+
+            case 1:
+                Gimmik_GapObject gap = gimmiks[1].GetComponent<Gimmik_GapObject>();
+                playerStatus.Score = gap.GainScore;
+                point = playerStatus.Score;
+                scorePanel.ShowScore(point);
+                eventID = -1;
+                break;
+
+            case 2:
+                Death death = gimmiks[2].GetComponent<Death>();
+                death.PlayerDeath();
+                lifePanel.UpdateBallPoint(playerStatus.Ball); 
+                eventID = -1;
+                break;
         }
 	}
 
