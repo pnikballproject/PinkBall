@@ -262,6 +262,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114833360150608970, guid: 09c7ab4599c628c478dd56e9db8ef168,
+        type: 2}
+      propertyPath: selectedBlocks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4643732406687608, guid: 09c7ab4599c628c478dd56e9db8ef168, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -349,7 +354,13 @@ Prefab:
       propertyPath: character
       value: 
       objectReference: {fileID: 983167628}
-    m_RemovedComponents: []
+    - target: {fileID: 114833964724835410, guid: 09c7ab4599c628c478dd56e9db8ef168,
+        type: 2}
+      propertyPath: eventHandler
+      value: 
+      objectReference: {fileID: 503286177}
+    m_RemovedComponents:
+    - {fileID: 114757451714841256, guid: 09c7ab4599c628c478dd56e9db8ef168, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 09c7ab4599c628c478dd56e9db8ef168, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &424834357
@@ -379,8 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 114519592129318890, guid: 894d6536d3c19ef419e0c1d8bdc03d13,
-    type: 2}
+  selectedFlowchart: {fileID: 503286202}
 --- !u!4 &424834359
 Transform:
   m_ObjectHideFlags: 1
@@ -394,6 +404,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &503286176 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1642776063524002, guid: 09c7ab4599c628c478dd56e9db8ef168,
+    type: 2}
+  m_PrefabInternal: {fileID: 343407979}
+--- !u!114 &503286177
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 503286176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 503286201}
+  waitForFrames: 1
+--- !u!114 &503286201 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114833964724835410, guid: 09c7ab4599c628c478dd56e9db8ef168,
+    type: 2}
+  m_PrefabInternal: {fileID: 343407979}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+--- !u!114 &503286202 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114833360150608970, guid: 09c7ab4599c628c478dd56e9db8ef168,
+    type: 2}
+  m_PrefabInternal: {fileID: 343407979}
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
 --- !u!1 &899311244
 GameObject:
   m_ObjectHideFlags: 0
