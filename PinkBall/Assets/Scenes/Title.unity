@@ -592,6 +592,33 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 669460208}
+--- !u!1 &699585301 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1083700625184646, guid: 09c7ab4599c628c478dd56e9db8ef168,
+    type: 2}
+  m_PrefabInternal: {fileID: 1511460858}
+--- !u!114 &699585302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 699585301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 24
+  indentLevel: 0
+  targetObject: {fileID: 1622992485}
+  methodName: endTitleTalk
+  delay: 0
+--- !u!114 &699585325 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114765306677238262, guid: 09c7ab4599c628c478dd56e9db8ef168,
+    type: 2}
+  m_PrefabInternal: {fileID: 1511460858}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!1 &752370601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,6 +1677,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114765306677238262, guid: 09c7ab4599c628c478dd56e9db8ef168,
+        type: 2}
+      propertyPath: commandList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 114834980383511402, guid: 09c7ab4599c628c478dd56e9db8ef168,
         type: 2}
       propertyPath: selectedCommands.Array.size
@@ -1702,7 +1734,23 @@ Prefab:
       propertyPath: character
       value: 
       objectReference: {fileID: 1832759315}
-    m_RemovedComponents: []
+    - target: {fileID: 114765306677238262, guid: 09c7ab4599c628c478dd56e9db8ef168,
+        type: 2}
+      propertyPath: eventHandler
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114834980383511402, guid: 09c7ab4599c628c478dd56e9db8ef168,
+        type: 2}
+      propertyPath: selectedBlocks.Array.data[0]
+      value: 
+      objectReference: {fileID: 699585325}
+    - target: {fileID: 114765306677238262, guid: 09c7ab4599c628c478dd56e9db8ef168,
+        type: 2}
+      propertyPath: commandList.Array.data[3]
+      value: 
+      objectReference: {fileID: 699585302}
+    m_RemovedComponents:
+    - {fileID: 114435671507083912, guid: 09c7ab4599c628c478dd56e9db8ef168, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 09c7ab4599c628c478dd56e9db8ef168, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1595010173
@@ -1899,9 +1947,9 @@ MonoBehaviour:
   choiceChara1: {fileID: 1225612760}
   choiceChara2: {fileID: 1221238600}
   dontTochPanel: {fileID: 202258174}
-  flowchart: {fileID: 0}
-  chara01_start_BlockName: Chara01_01
-  chara02_start_BlockName: Chara01_02
+  flowchart: {fileID: 224866208}
+  chara01_start_BlockName: Chara01-01
+  chara02_start_BlockName: Chara01-02
 --- !u!1 &1625245922
 GameObject:
   m_ObjectHideFlags: 0

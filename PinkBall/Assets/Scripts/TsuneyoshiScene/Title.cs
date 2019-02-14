@@ -89,6 +89,7 @@ public class Title : MonoBehaviour {
     public void OnClickYesButton()
     {
         //キャラが喋る処理（ファンガスを呼び出す）
+        Debug.Log("現在のblockNameは" + blockName);
         flowchart.ExecuteBlock(blockName);
 
     }
@@ -108,6 +109,8 @@ public class Title : MonoBehaviour {
     //会話終了時
     public void endTitleTalk()
     {
+        Debug.Log("会話終了メソッド呼び出され");
+
         //シーン遷移演出入れるとしたらここ
 
         //Mainシーンに遷移
