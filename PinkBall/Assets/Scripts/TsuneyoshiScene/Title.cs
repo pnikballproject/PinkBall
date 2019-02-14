@@ -29,9 +29,19 @@ public class Title : MonoBehaviour {
     public string chara01_start_BlockName;
     public string chara02_start_BlockName;
 
+    //選択中のキャラID
+    public int charaId;
+
     //呼び出すイベントのBox Name
     //CHARA_01_01
     //CHARA_02_01
+
+    private void Start()
+    {
+        //グローバル変数を初期化
+        GlobalData.selectCharacterId = 0;
+        GlobalData.GlobalScore = 0;
+    }
 
     //1のキャラが選択された際に呼び出される処理
     public void OnClickCharacter1()
@@ -40,6 +50,9 @@ public class Title : MonoBehaviour {
 
         //呼び出す会話イベントの名前を代入
         blockName = chara01_start_BlockName;
+
+        //選択キャラIDを一時的に保管
+        charaId = 1;
 
         //選択アイコンを表示させる
         choiceChara1.gameObject.SetActive(true);
@@ -56,6 +69,9 @@ public class Title : MonoBehaviour {
 
         //呼び出す会話イベントの名前を代入
         blockName = chara02_start_BlockName;
+
+        //選択キャラIDを一時的に保管
+        charaId = 2;
 
         //選択アイコンを表示させる
         choiceChara2.gameObject.SetActive(true);
@@ -88,10 +104,12 @@ public class Title : MonoBehaviour {
     //確認パネルの　はい　が押された時の処理
     public void OnClickYesButton()
     {
+        //グローバル変数に選択キャラIDを代入
+        GlobalData.selectCharacterId = charaId;
+
         //キャラが喋る処理（ファンガスを呼び出す）
         Debug.Log("現在のblockNameは" + blockName);
         flowchart.ExecuteBlock(blockName);
-
     }
 
     //確認パネルの　いいえ　が押された時の処理
