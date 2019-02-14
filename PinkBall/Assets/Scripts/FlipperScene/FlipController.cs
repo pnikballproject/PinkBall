@@ -52,7 +52,7 @@ public class FlipController : MonoBehaviour
         hjL.limits = limitsL;
         hjL.useLimits = true;
 
-        // フリッパー制御よう変数
+        // フリッパー制御
         LFlipperTF = false;
         RFlipperTF = false;
     }
@@ -73,29 +73,27 @@ public class FlipController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             LFlipperTF = true;
-            openFlipper(LFlipperTF, RFlipperTF);
+            OpenFlipper(LFlipperTF, RFlipperTF);
         }
 
         // 右フリッパーの操作
         if (Input.GetKey(KeyCode.RightArrow))
         {
             RFlipperTF = true;
-            openFlipper(LFlipperTF, RFlipperTF);
+            OpenFlipper(LFlipperTF, RFlipperTF);
         }
 
         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
         {
             LFlipperTF = false;
             RFlipperTF = false;
-            closeFlipper();
+            CloseFlipper();
         }
 
     }
 
-    /*
-	 * フリッパー オープン制御メソッド
-	*/
-    public void openFlipper(bool LF, bool RF)
+    // フリッパー オープン制御メソッド
+    public void OpenFlipper(bool LF, bool RF)
     {
 
         if (RF)
@@ -105,7 +103,7 @@ public class FlipController : MonoBehaviour
             sprR.damper = damperR;
             sprR.targetPosition = openAngleR;
             hjR.spring = sprR;
-            Debug.Log("FlipperR:" + openAngleR);
+            //Debug.Log("FlipperR:" + openAngleR);
         }
 
         if (LF)
@@ -115,14 +113,12 @@ public class FlipController : MonoBehaviour
             sprL.damper = damperL;
             sprL.targetPosition = openAngleL;
             hjL.spring = sprL;
-            Debug.Log("FlipperL" + openAngleL);
+            //Debug.Log("FlipperL" + openAngleL);
         }
     }
 
-    /*
-	 * フリッパー クローズ制御メソッド
-	*/
-    public void closeFlipper()
+    // フリッパー クローズ制御メソッド
+    public void CloseFlipper()
     {
         JointSpring sprR = hjR.spring;
         sprR.spring = springR;

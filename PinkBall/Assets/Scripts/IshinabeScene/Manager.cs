@@ -6,6 +6,8 @@ public class Manager : MonoBehaviour {
     public GameObject[] gimmiks;
     public int eventID = -1;
     public PlayerStatus playerStatus;
+    public ScorePanel scorePanel;
+    public LifePanel lifePanel;
 
     // Use this for initialization
     void Start () {
@@ -19,6 +21,9 @@ public class Manager : MonoBehaviour {
             case 0:
                 Gimic_Emission emission = gimmiks[0].GetComponent<Gimic_Emission>();
                 emission.Emission();
+                playerStatus.Score = emission.GainScore;
+                int point = playerStatus.Score;
+                scorePanel.ShowScore(point);
                 eventID = -1;
                 break;
         }
