@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Circle : MonoBehaviour
+public class Circle : GimicBase
 {
     public float speed;
     public float radius;

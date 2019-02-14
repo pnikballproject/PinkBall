@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hinder : MonoBehaviour {
+public class Hinder : GimicBase {
 
     [SerializeField]
     private Vector3 m_targetPosition = Vector3.zero;
