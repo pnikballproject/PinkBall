@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114571108661247422}
   - component: {fileID: 114842125674733458}
   - component: {fileID: 114124974431101318}
-  - component: {fileID: 114711418543283308}
+  - component: {fileID: 114012011482995202}
   m_Layer: 0
   m_Name: SampleFlowchart
   m_TagString: Untagged
@@ -65,6 +65,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114012011482995202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1971526207088314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 114465090521365254}
+  waitForFrames: 1
 --- !u!114 &114079773957695996
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -117,7 +130,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 114465090521365254}
   selectedCommands: []
   variables: []
   description: 
@@ -415,7 +429,7 @@ MonoBehaviour:
   itemId: 0
   blockName: Game Start
   description: 
-  eventHandler: {fileID: 114711418543283308}
+  eventHandler: {fileID: 114012011482995202}
   commandList:
   - {fileID: 114999016026410040}
   - {fileID: 114284797858643876}
@@ -541,19 +555,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &114711418543283308
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1971526207088314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 114465090521365254}
-  message: 
 --- !u!114 &114840794274024120
 MonoBehaviour:
   m_ObjectHideFlags: 2
