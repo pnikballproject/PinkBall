@@ -60,7 +60,8 @@ public class GimicBase : MonoBehaviour{
         //※デバッグ用です　本番ではコメントアウトしてください
         //ギミック制作シーン（マネージャがない状態）で制作デバッグ用です
         //基本的な処理をすべて呼び出します
-        hitBasicProcessing(col);
+        //hitBasicProcessing(col);
+        mng.EventIDSetter(id);
     }
 
     //基本的なヒット時の処理1連を自動処理
