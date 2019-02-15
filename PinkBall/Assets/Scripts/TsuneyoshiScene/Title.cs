@@ -32,15 +32,53 @@ public class Title : MonoBehaviour {
     //選択中のキャラID
     public int charaId;
 
-    //呼び出すイベントのBox Name
-    //CHARA_01_01
-    //CHARA_02_01
+    //キャラボタン
+    public Button chara1_Button;
+    public Button chara2_Button;
+
+    //pushstartText
+    public Text startText;
+
+    //InfoPanel
+    public GameObject infoPanel;
+
+    //スタート処理だけの
+    bool isTouch;
+
+    //スタート時効果音
+    public AudioSource SE;
+
+    public AudioClip startSE;
 
     private void Start()
     {
         //グローバル変数を初期化
         GlobalData.selectCharacterId = 0;
         GlobalData.GlobalScore = 0;
+    }
+
+    private void Update()
+    {
+        if (isTouch == false)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                isTouch = true;
+
+                //スタートテキストを非アクティブに
+                startText.gameObject.SetActive(false);
+
+                //効果音を鳴らす
+                SE.PlayOneShot(startSE);
+
+                //キャラ選択ボタンをアクティブに
+                chara1_Button.gameObject.SetActive(true);
+                chara2_Button.gameObject.SetActive(true);
+
+                //InfoPanelをアクティブに
+                infoPanel.SetActive(true);
+            }
+        }
     }
 
     //1のキャラが選択された際に呼び出される処理
@@ -104,6 +142,9 @@ public class Title : MonoBehaviour {
     //確認パネルの　はい　が押された時の処理
     public void OnClickYesButton()
     {
+        //効果音を鳴らす
+        SE.PlayOneShot(startSE);
+
         //グローバル変数に選択キャラIDを代入
         GlobalData.selectCharacterId = charaId;
 
@@ -130,6 +171,12 @@ public class Title : MonoBehaviour {
         Debug.Log("会話終了メソッド呼び出され");
 
         //シーン遷移演出入れるとしたらここ
+
+        //濱口テスト（他の人触らないでください）
+        if (GameObject.Find("test_hama_obj")) //もし見つけられれば
+        {
+            GameObject.Find("test_hama_obj").GetComponent<hamaTestDont>().thisDestroy();
+        }
 
         //Mainシーンに遷移
         SceneManager.LoadScene("Main");
