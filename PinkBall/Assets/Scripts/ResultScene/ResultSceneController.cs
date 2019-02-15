@@ -16,8 +16,6 @@ public class ResultSceneController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-
-            Debug.Log("クリックテスト");
             flowchart.ExecuteBlock(Charaend);
 
         }
