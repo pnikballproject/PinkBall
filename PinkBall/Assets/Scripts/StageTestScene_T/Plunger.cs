@@ -60,7 +60,7 @@ public class Plunger : GimicBase
             {
                 foreach(Rigidbody rb in ballList)
                 {
-                    rb.AddForce(power * Vector3.forward, ForceMode.Impulse);
+                    rb.AddForce(power * Vector3.up, ForceMode.Impulse);
                 }
             }
         }
