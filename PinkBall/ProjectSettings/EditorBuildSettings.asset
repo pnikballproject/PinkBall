@@ -14,3 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Result.unity
     guid: 402a39196a292c145bbfb83581025b1e
+  - enabled: 1
+    path: Assets/Materials/test_hamaScene/etc/test2_hama.unity
+    guid: f45b4ee31f340f7489ccc17fb2dcc007
+  - enabled: 1
+    path: Assets/Materials/test_hamaScene/etc/test_hama2.unity
+    guid: 22a5172fa24d43b4a9efe3a40ce54abd
