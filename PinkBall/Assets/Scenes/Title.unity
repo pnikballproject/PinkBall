@@ -599,7 +599,7 @@ GameObject:
   m_PrefabInternal: {fileID: 1511460858}
 --- !u!114 &699585302
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 699585301}
@@ -613,6 +613,17 @@ MonoBehaviour:
   targetObject: {fileID: 1622992485}
   methodName: endTitleTalk
   delay: 0
+--- !u!114 &699585303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 699585301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297dfa3b60b74734891e2035ba90f3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &699585325 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114765306677238262, guid: 09c7ab4599c628c478dd56e9db8ef168,
@@ -1950,6 +1961,7 @@ MonoBehaviour:
   flowchart: {fileID: 224866208}
   chara01_start_BlockName: Chara01-01
   chara02_start_BlockName: Chara01-02
+  charaId: 0
 --- !u!1 &1625245922
 GameObject:
   m_ObjectHideFlags: 0
