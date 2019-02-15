@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Acceleration : GimicBase
 {
-    public Vector3 accelerationDirection;
+    public Vector3 acceleratDirection;
 
     void OnTriggerEnter(Collider other)
     {
         other.gameObject.GetComponent<Rigidbody>().AddForce(
-            new Vector3(accelerationDirection.x, accelerationDirection.y, accelerationDirection.z), ForceMode.Impulse);
+            new Vector3(acceleratDirection.x, acceleratDirection.y, acceleratDirection.z), ForceMode.Impulse);
     }
 }
