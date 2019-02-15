@@ -18,6 +18,7 @@ public class Death : GimicBase
 
     public void PlayerDeath()
     {
-        playerStatus.Ball -= 1;
+        Debug.Log("ballを1;減らす");
+        playerStatus.Ball +=  -1;
     }
 }

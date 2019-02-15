@@ -62,11 +62,14 @@ public class GimicBase : MonoBehaviour{
         //基本的な処理をすべて呼び出します
         //hitBasicProcessing(col);
         mng.EventIDSetter(id);
+        mng.ColSetter(col);
+        mng.ObjSetter(gameObject);
     }
 
     //基本的なヒット時の処理1連を自動処理
     public virtual void hitBasicProcessing(Collision col)
     {
+        Debug.Log("hitBasicProcessing");
         //効果音を鳴らす
         playHitSoundClip(0); //基本ヒット時音
 
