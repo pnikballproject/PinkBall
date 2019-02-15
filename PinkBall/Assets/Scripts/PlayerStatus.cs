@@ -21,17 +21,24 @@ public class PlayerStatus : MonoBehaviour
 
         set
         {
-            if(value > 0)
-            {
-                if(DefaultBallPoint > ball)
-                {
-                    ball += value;
-                }
-            }
-            else
-            {
-                ball += value;
-            }
+            Debug.Log("デバッグ呼び出され");
+            //if (value > 0)
+            //{
+            //    if(DefaultBallPoint > ball)
+            //    {
+            //        Debug.Log("デバッグ1;+");
+            //        ball += value;
+            //    }
+            //}
+            //else if(value == -1)
+            //{
+            //    Debug.Log("デバッグ1;-");
+            //    ball += value;
+            //}
+
+            Debug.Log("デバッグ1;-");
+            ball = value;
+
         }
     }
 

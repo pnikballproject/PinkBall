@@ -4,23 +4,35 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour {
     public GameObject[] gimmiks;
+    public GameObject ballObj;
     public int eventID = -1;
     public PlayerStatus playerStatus;
     public ScorePanel scorePanel;
     public LifePanel lifePanel;
 
+    Collision eventCol;
+    GameObject eventObj;
+
+    void Awake()
+    {
+        playerStatus.DefaultBallPoint = 3;
+    }
+
     // Use this for initialization
     void Start () {
-		
-	}
+        
+        Debug.Log("スタート残機数 " + playerStatus.Ball);
+        Debug.Log("デフォルト残機数 " + playerStatus.DefaultBallPoint);
+    }
 	
 	// Update is called once per frame
 	void Update () {
         switch (eventID)
         {
             case 0:
-                Gimic_Emission emission = gimmiks[0].GetComponent<Gimic_Emission>();
+                Gimic_Emission emission = eventObj.GetComponent<Gimic_Emission>();
                 emission.Emission();
+                emission.hitBasicProcessing(eventCol);
                 playerStatus.Score = emission.GainScore;
                 int point = playerStatus.Score;
                 scorePanel.ShowScore(point);
@@ -37,8 +49,11 @@ public class Manager : MonoBehaviour {
 
             case 2:
                 Death death = gimmiks[2].GetComponent<Death>();
+                ballObj.transform.position = new Vector3(2.32f, 0.58f, -0.72f);
                 death.PlayerDeath();
-                lifePanel.UpdateBallPoint(playerStatus.Ball); 
+                int life = playerStatus.Ball;
+                lifePanel.UpdateBallPoint(life);
+                Debug.Log("残機数　" + playerStatus.Ball);
                 eventID = -1;
                 break;
         }
@@ -47,5 +62,15 @@ public class Manager : MonoBehaviour {
     public void EventIDSetter(int id)
     {
         eventID = id;
+    }
+
+    public void ColSetter(Collision col)
+    {
+        eventCol = col;
+    }
+
+    public void ObjSetter(GameObject obj)
+    {
+        eventObj = obj;
     }
 }
