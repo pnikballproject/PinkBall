@@ -7,19 +7,35 @@ using Fungus;
 
 public class ResultSceneController : MonoBehaviour
 {
-
     public Flowchart flowchart;
 
-    public string Charaend;
+    public Text score;
+
+    public void Start()
+    {
+        score.text = "score:" + GlobalData.GlobalScore;
+
+    }
 
     void Update()
     {
+        int charanumber = GlobalData.selectCharacterId;
+
         if (Input.GetMouseButtonDown(0))
         {
-            flowchart.ExecuteBlock(Charaend);
+            switch (charanumber)
+            {
+                case 1:
+                    flowchart.ExecuteBlock("Chara01-05");
+                    break;
+                case 2:
+                    flowchart.ExecuteBlock("Chara02-05");
+                    break;
+            }
 
         }
     }
+    
     public void endTitleTalk()
     {
         Debug.Log("会話終了メソッド呼び出され");
