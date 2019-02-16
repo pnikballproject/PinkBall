@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -367,8 +367,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1342219094}
   - {fileID: 1221238599}
+  - {fileID: 1342219094}
   m_Father: {fileID: 1622992489}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -602,7 +602,7 @@ Prefab:
         type: 2}
       propertyPath: portraits.Array.data[3]
       value: 
-      objectReference: {fileID: 21300000, guid: 928ffdcc0a8816f41bea8aac7fa93696,
+      objectReference: {fileID: 21300000, guid: 7e85d3546c9524c46811baa3205beebf,
         type: 3}
     - target: {fileID: 114245895194584194, guid: 9af65f8df1b94a64ab11adc2922b0c2a,
         type: 2}
@@ -826,7 +826,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 986040336}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1146,8 +1146,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 752370602}
   - {fileID: 1225612759}
+  - {fileID: 752370602}
   m_Father: {fileID: 1622992489}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1528,7 +1528,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 311994520}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1596,7 +1596,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 986040336}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1643,7 +1643,7 @@ GameObject:
   m_PrefabInternal: {fileID: 2019713158}
 --- !u!114 &1305246458
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1305246457}
@@ -1670,7 +1670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 30
   indentLevel: 0
-  display: 1
+  display: 0
   stage: {fileID: 0}
   character: {fileID: 724103263}
   replacedCharacter: {fileID: 0}
@@ -1726,7 +1726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 254.71768
+    x: 256.2102
     y: 294.41797
     width: 120
     height: 40
@@ -1754,8 +1754,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 252.93289
-    y: 225.59438
+    x: 250.60324
+    y: 227.92403
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1782,8 +1782,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 252.61708
-    y: 152.73729
+    x: 252.8438
+    y: 152.24475
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1810,7 +1810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 253.81868
+    x: 251.69102
     y: 91.30873
     width: 120
     height: 40
@@ -1838,7 +1838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 44
   indentLevel: 0
-  storyText: 
+  storyText: "\u6B21\u3082\u4E00\u7DD2\u306B\u9811\u5F35\u308D\u3046\u306D\u3002"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1866,9 +1866,9 @@ MonoBehaviour:
   indentLevel: 0
   display: 1
   stage: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 724103263}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 3f6e976b1ad41ed44ab785a0cdcff920, type: 3}
+  portrait: {fileID: 21300000, guid: 81eb6db8f2df6e54da3d0ef7ffcaceca, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
@@ -1922,7 +1922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 41
   indentLevel: 0
-  storyText: "\uFF13\u56DE\u76EE\u306E\u30BB\u30EA\u30D5"
+  storyText: "\u3067\u3082\u9811\u5F35\u3063\u3066\u304F\u308C\u305F\u304B\u3089\u3054\u8912\u7F8E\u3092\u3001\u305D\u306E..\u3081\u3001\u76EE\u3092\u7791\u3063\u3066\u6B32\u3057\u3044\u306A\u3002\r\n\u3093\u3063\u3002"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1950,9 +1950,9 @@ MonoBehaviour:
   indentLevel: 0
   display: 1
   stage: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 724103263}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 3f6e976b1ad41ed44ab785a0cdcff920, type: 3}
+  portrait: {fileID: 21300000, guid: 7e85d3546c9524c46811baa3205beebf, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
@@ -2006,7 +2006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 38
   indentLevel: 0
-  storyText: "\uFF12\u56DE\u76EE\u306E\u30BB\u30EA\u30D5"
+  storyText: "\u4ECA\u56DE\u3082\u6821\u9577\u5148\u751F\u306B\u8A8D\u3081\u3066\u3001\n\u8CB0\u3048\u305F\u306A\u304B\u3063\u305F\u308F\u306D\u3002\u6094\u3057\u3044\u308F\u3002"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2034,9 +2034,9 @@ MonoBehaviour:
   indentLevel: 0
   display: 1
   stage: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 724103263}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 3f6e976b1ad41ed44ab785a0cdcff920, type: 3}
+  portrait: {fileID: 21300000, guid: 04292699adca4b84dbf0a8bf6c0914d9, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
@@ -2090,7 +2090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 35
   indentLevel: 0
-  storyText: "1\u56DE\u76EE\u306E\u30BB\u30EA\u30D5"
+  storyText: "\u751F\u5F92\u7DCF\u4F1A\u3067\u604B\u611B\u7981\u6B62\u306E\u6821\u5247\u53CD\u5BFE\u306E\u6570\u304C\n\u3068\u3066\u3082\u591A\u304B\u3063\u305F\u308F\u306D\u3002\n\u307F\u3093\u306A\u3078\u306E\u547C\u3073\u304B\u3051\u3042\u308A\u304C\u3068\u3046\u3002"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2118,9 +2118,9 @@ MonoBehaviour:
   indentLevel: 0
   display: 1
   stage: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 724103263}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 3f6e976b1ad41ed44ab785a0cdcff920, type: 3}
+  portrait: {fileID: 21300000, guid: 01897e53a89471648827465b288ca3f1, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
@@ -2190,7 +2190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 31
   indentLevel: 0
-  storyText: "\u30AD\u30E3\u30E92\u306E\u30B9\u30BF\u30FC\u30C8\u30BB\u30EA\u30D5"
+  storyText: "\u30B2\u30FC\u30E0\u3092\u958B\u59CB\u3059\u308B\u308F\u3002\r\n\u604B\u611B\u7981\u6B62\u306E\u6821\u5247\u306A\u3093\u3066\u5EC3\u308C\u308C\u3070\u3044\u3044\u306E\u306B\u3002"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2205,7 +2205,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1305246479
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1305246457}
@@ -2221,7 +2221,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &1305246480
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1305246457}
@@ -2237,7 +2237,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &1305246481
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1305246457}
@@ -2253,7 +2253,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &1305246482
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1305246457}
@@ -2269,7 +2269,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &1305246483
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1305246457}
@@ -2312,12 +2312,6 @@ MonoBehaviour:
   move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 0
---- !u!114 &1305246502 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114111729953733386, guid: 247699d5d545b6c44af17a75ca9e9198,
-    type: 2}
-  m_PrefabInternal: {fileID: 2019713158}
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!1 &1342219093
 GameObject:
   m_ObjectHideFlags: 0
@@ -2346,7 +2340,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 311994520}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3415,7 +3409,7 @@ Prefab:
         type: 2}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 1305246502}
+      objectReference: {fileID: 1305246462}
     - target: {fileID: 114681897595421280, guid: 247699d5d545b6c44af17a75ca9e9198,
         type: 2}
       propertyPath: nodeRect.x
@@ -3425,7 +3419,7 @@ Prefab:
         type: 2}
       propertyPath: selectedCommands.Array.data[0]
       value: 
-      objectReference: {fileID: 1305246480}
+      objectReference: {fileID: 1305246468}
     - target: {fileID: 114777266458997850, guid: 247699d5d545b6c44af17a75ca9e9198,
         type: 2}
       propertyPath: selectedCommands.Array.data[1]
