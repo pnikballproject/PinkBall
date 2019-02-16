@@ -77,6 +77,10 @@ public class PlayerStatus : MonoBehaviour
 
         set
         {
+            if (hitCounter <= 3) //ヒット回数が3以上ならば
+            {
+                return; //以下の処理はせずに抜ける
+            }
             hitCounter = value;
         }
     }

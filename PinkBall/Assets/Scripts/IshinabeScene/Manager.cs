@@ -15,6 +15,10 @@ public class Manager : MonoBehaviour {
     Collision eventCol;
     GameObject eventObj;
 
+    //BGM再生
+    public AudioClip bgm;
+    public AudioSource Asourse; 
+
     void Awake()
     {
         playerStatus.DefaultBallPoint = 3;
@@ -25,6 +29,8 @@ public class Manager : MonoBehaviour {
         
         Debug.Log("スタート残機数 " + playerStatus.Ball);
         Debug.Log("デフォルト残機数 " + playerStatus.DefaultBallPoint);
+
+
     }
 	
 	// Update is called once per frame
@@ -123,5 +129,8 @@ public class Manager : MonoBehaviour {
         Rigidbody ballRigidbody = ballObj.GetComponent<Rigidbody>();
         ballRigidbody.isKinematic = false;
         //疑似ポーズ解除や他の処理呼び出しなど
+
+        //ゲート非アクティブにする
+        gateObj.SetActive(false);
     }
 }

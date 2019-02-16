@@ -25,6 +25,8 @@ public class ResultSceneController : MonoBehaviour
 
         score.text = "score:" + GlobalData.GlobalScore;
 
+        Debug.Log(GlobalData.GlobalScore);
+
     }
 
     void Update()
