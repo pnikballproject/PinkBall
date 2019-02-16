@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour {
     public GameObject[] gimmiks;
@@ -49,11 +50,25 @@ public class Manager : MonoBehaviour {
 
             case 2:
                 Death death = gimmiks[2].GetComponent<Death>();
-                ballObj.transform.position = new Vector3(2.32f, 0.58f, -0.72f);
+                ballObj.transform.position = new Vector3(3.56f, 0.58f, -0.72f);
                 death.PlayerDeath();
                 int life = playerStatus.Ball;
                 lifePanel.UpdateBallPoint(life);
                 Debug.Log("残機数　" + playerStatus.Ball);
+                if(playerStatus.Ball == 0)
+                {
+                    SceneManager.LoadScene("Result");
+                }
+                eventID = -1;
+                break;
+
+            //Hinder
+            case 3:
+                Hinder hinder = eventObj.GetComponent<Hinder>();
+                hinder.hitBasicProcessing(eventCol);
+                playerStatus.Score = hinder.GainScore;
+                point = playerStatus.Score;
+                scorePanel.ShowScore(point);
                 eventID = -1;
                 break;
         }
