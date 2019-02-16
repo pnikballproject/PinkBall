@@ -23,6 +23,7 @@ public class Death : GimicBase
         playerStatus.Ball +=  -1;
         if (playerStatus.Ball == 0)
         {
+            GlobalData.GlobalScore = playerStatus.Score;
             SceneManager.LoadScene("Result");
         }
     }

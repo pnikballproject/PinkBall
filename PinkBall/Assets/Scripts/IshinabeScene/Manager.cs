@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour {
     public GameObject[] gimmiks;
     public GameObject ballObj;
+    public GameObject gateObj;
     public int eventID = -1;
     public PlayerStatus playerStatus;
     public ScorePanel scorePanel;
     public LifePanel lifePanel;
-
+    public TalkEventController talkEventController;
     Collision eventCol;
     GameObject eventObj;
 
@@ -52,6 +53,7 @@ public class Manager : MonoBehaviour {
                 Death death = gimmiks[2].GetComponent<Death>();
                 ballObj.transform.position = new Vector3(3.56f, 0.58f, -0.72f);
                 death.PlayerDeath();
+                death.hitBasicProcessing(eventCol);
                 int life = playerStatus.Ball;
                 lifePanel.UpdateBallPoint(life);
                 Debug.Log("残機数　" + playerStatus.Ball);
@@ -69,6 +71,30 @@ public class Manager : MonoBehaviour {
                 playerStatus.Score = hinder.GainScore;
                 point = playerStatus.Score;
                 scorePanel.ShowScore(point);
+                eventID = -1;
+                break;
+            
+            //Gateをtrueに
+            case 4:
+                Gimic_Emission emission2 = eventObj.GetComponent<Gimic_Emission>();
+                emission2.Emission();
+                emission2.hitBasicProcessing(eventCol);
+                playerStatus.Score = emission2.GainScore;
+                point = playerStatus.Score;
+                scorePanel.ShowScore(point);
+                gateObj.SetActive(true);
+                eventID = -1;
+                break;
+
+            //Gate
+            case 5:
+                Debug.Log("case5");
+                Rigidbody ballRigidbody = ballObj.GetComponent<Rigidbody>();
+                ballRigidbody.isKinematic = true;
+                GimicBase gimicBase = eventObj.GetComponent<GimicBase>();
+                playerStatus.Score = gimicBase.GainScore;
+                playerStatus.HitCounter += 1;
+                talkEventController.toStartFungusTalkEvent(playerStatus.HitCounter);
                 eventID = -1;
                 break;
         }
@@ -94,7 +120,8 @@ public class Manager : MonoBehaviour {
     public void endFungusEvent()
     {
         Debug.Log("ファンガスイベント終了を検知");
-
+        Rigidbody ballRigidbody = ballObj.GetComponent<Rigidbody>();
+        ballRigidbody.isKinematic = false;
         //疑似ポーズ解除や他の処理呼び出しなど
     }
 }

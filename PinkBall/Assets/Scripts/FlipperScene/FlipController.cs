@@ -29,6 +29,8 @@ public class FlipController : MonoBehaviour
     // フリッパー制御用
     bool LFlipperTF, RFlipperTF;
 
+    AudioSource audio;
+
     void Start()
     {
         // ボール
@@ -55,6 +57,8 @@ public class FlipController : MonoBehaviour
         // フリッパー制御
         LFlipperTF = false;
         RFlipperTF = false;
+
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -74,6 +78,8 @@ public class FlipController : MonoBehaviour
         {
             LFlipperTF = true;
             OpenFlipper(LFlipperTF, RFlipperTF);
+            audio.Play();
+
         }
 
         // 右フリッパーの操作
@@ -81,6 +87,7 @@ public class FlipController : MonoBehaviour
         {
             RFlipperTF = true;
             OpenFlipper(LFlipperTF, RFlipperTF);
+            audio.Play();
         }
 
         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))

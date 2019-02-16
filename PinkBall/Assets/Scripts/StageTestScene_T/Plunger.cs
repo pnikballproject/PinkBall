@@ -18,12 +18,14 @@ public class Plunger : GimicBase
     public Slider powerSlider; // UIのスライダー表示
 
     bool ballReady; // 球がセットされているか確認
+    AudioSource source;
 
-	void Start ()
+    void Start ()
     {
         powerSlider.minValue = 0f;
         powerSlider.maxValue = maxPower;
         ballList = new List<Rigidbody>();
+        source = GetComponent<AudioSource>();
     }
 	
 	void Update ()
@@ -46,18 +48,23 @@ public class Plunger : GimicBase
         {
             ballReady = true;
 
-            // 左クリックで出力値を溜める
-            if (Input.GetMouseButton(0))
+            // ↓で出力値を溜める
+            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow))
             {
+                source.Play();
+
                 if (power <= maxPower)
                 {
                     power += increase * Time.deltaTime;
                 }
+                
+
             }
 
-            // 左クリックを離すと溜めた出力値をAddForce
-            if (Input.GetMouseButtonUp(0))
+            // キーを離すと溜めた出力値をAddForce
+            if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.UpArrow))
             {
+
                 foreach(Rigidbody rb in ballList)
                 {
                     rb.AddForce(power * Vector3.up, ForceMode.Impulse);
