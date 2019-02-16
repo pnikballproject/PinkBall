@@ -13,6 +13,13 @@ public class ResultSceneController : MonoBehaviour
 
     public void Start()
     {
+        flowchart = GameObject.Find("SampleData/SampleFlowchart").GetComponent<Flowchart>();
+
+        if (flowchart == false)
+        {
+            Debug.LogError("flowchartが格納されていません　このままだと正常に進行しません");
+        }
+
         score.text = "score:" + GlobalData.GlobalScore;
 
     }
