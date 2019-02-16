@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Death : GimicBase
 {
@@ -20,5 +21,9 @@ public class Death : GimicBase
     {
         Debug.Log("ballを1;減らす");
         playerStatus.Ball +=  -1;
+        if (playerStatus.Ball == 0)
+        {
+            SceneManager.LoadScene("Result");
+        }
     }
 }
