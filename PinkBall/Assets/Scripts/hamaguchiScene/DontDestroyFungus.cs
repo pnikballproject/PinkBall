@@ -7,7 +7,10 @@ public class DontDestroyFungus : MonoBehaviour {
     //Mainシーンで使用する
     TalkEventController tec;
 
-	void Start () {
+    //リザルトシーンで使用するマネージャ
+    ResultSceneController rsc;
+
+    void Start () {
         DontDestroyOnLoad(gameObject);
         Debug.Log("Fungus_FlowChartのDontDestroy設定完了");
     }
@@ -31,6 +34,19 @@ public class DontDestroyFungus : MonoBehaviour {
     public void endFungusEvent()
     {
         tec.endFungusEvent();
+    }
+
+    //リザルトシーンの会話終了時に呼ばれる終了処理
+    public void endFungusEventResult()
+    {
+        rsc.endResultTalk();
+    }
+
+    //ResultSceneControllerを探す
+    public void findResultSceneController(GameObject r)
+    {
+        Debug.Log("findResultSceneController呼び出され");
+       rsc = r.GetComponent<ResultSceneController>();
     }
 
 }
