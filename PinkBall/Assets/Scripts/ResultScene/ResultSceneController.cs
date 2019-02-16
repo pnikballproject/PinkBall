@@ -43,7 +43,7 @@ public class ResultSceneController : MonoBehaviour
         }
     }
     
-    public void endTitleTalk()
+    public void endResultTalk()
     {
         Debug.Log("会話終了メソッド呼び出され");
 
