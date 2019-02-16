@@ -29,6 +29,10 @@ public class Title : MonoBehaviour {
     public string chara01_start_BlockName;
     public string chara02_start_BlockName;
 
+    //そのイメージ
+    public Image Character1_Image;
+    public Image Character2_Image;
+
     //選択中のキャラID
     public int charaId;
 
@@ -147,6 +151,21 @@ public class Title : MonoBehaviour {
 
         //グローバル変数に選択キャラIDを代入
         GlobalData.selectCharacterId = charaId;
+
+        //確認パネルを消す
+        fixPanelSetFalse();
+
+        //選択中ではないキャラのイメージを非表示にする
+        if (charaId == 1) //選択中のキャラが1の場合
+        {
+            Character2_Image.GetComponent<Image>().color = new Color(0.0f / 255.0f, 0.0f / 255.0f, 0.0f / 255.0f, 0 / 255.0f); 
+        }else if (charaId == 2) //選択中のキャラが2の場合
+        {
+            Character1_Image.GetComponent<Image>().color = new Color(0.0f / 255.0f, 0.0f / 255.0f, 0.0f / 255.0f, 0 / 255.0f); 
+        }
+
+        //キャラ選択してねパネルを消す
+        infoPanel.SetActive(false);
 
         //キャラが喋る処理（ファンガスを呼び出す）
         Debug.Log("現在のblockNameは" + blockName);

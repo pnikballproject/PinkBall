@@ -2699,7 +2699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 251.71759
+    x: 252.71759
     y: 361.13223
     width: 120
     height: 40
@@ -3297,8 +3297,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 52
   indentLevel: 0
-  targetObject: {fileID: 2019713161}
-  methodName: endResultTalk
+  targetObject: {fileID: 2019713159}
+  methodName: endFungusEventResult
   delay: 0
 --- !u!4 &1305246485
 Transform:
@@ -3327,8 +3327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 53
   indentLevel: 0
-  targetObject: {fileID: 2019713161}
-  methodName: endResultTalk
+  targetObject: {fileID: 2019713159}
+  methodName: endFungusEventResult
   delay: 0
 --- !u!114 &1305246487
 MonoBehaviour:
@@ -4487,6 +4487,8 @@ MonoBehaviour:
   flowchart: {fileID: 2140045234}
   chara01_start_BlockName: Chara01-01
   chara02_start_BlockName: Chara02-01
+  Character1_Image: {fileID: 752370603}
+  Character2_Image: {fileID: 1342219095}
   charaId: 0
   chara1_Button: {fileID: 986040337}
   chara2_Button: {fileID: 311994521}
@@ -5569,7 +5571,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1305246460}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1305246484}
   variables: []
   description: 
   stepPause: 0

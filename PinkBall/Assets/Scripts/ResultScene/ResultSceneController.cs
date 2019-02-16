@@ -20,6 +20,9 @@ public class ResultSceneController : MonoBehaviour
             Debug.LogError("flowchartが格納されていません　このままだと正常に進行しません");
         }
 
+        //flowchartの初期動作
+        GameObject.Find("SampleData").GetComponent<DontDestroyFungus>().findResultSceneController(gameObject);
+
         score.text = "score:" + GlobalData.GlobalScore;
 
     }
